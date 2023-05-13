@@ -1,0 +1,56 @@
+{
+  "name": "@profico/selenium-typescript-boilerplate",
+  "version": "0.0.0",
+  "description": "Boilerplate repository for automated tests written in TypeScript with ts-jest using Selenium WebDriverJS",
+  "author": "Filip Vidak",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jest": "^26.0.23",
+    "@types/selenium-webdriver": "^4.0.13",
+    "jest": "^27.0.4",
+    "selenium-webdriver": "^4.0.0-beta.4",
+    "ts-jest": "^27.0.3",
+    "typescript": "^4.3.2"
+  },
+  "scripts": {
+    "remote": "LOCATION=remote",
+
+    "customBinaries": "BINARIES=custom",
+
+    "headless": "UI=headless",
+
+    "test:chrome": "WEBDRIVER=chrome jest",
+    "test:firefox": "WEBDRIVER=firefox jest",
+    "test:safari": "WEBDRIVER=safari jest --maxWorkers=1",
+    "test:edge": "WEBDRIVER=MicrosoftEdge jest",
+
+    "test:remote:chrome": "LOCATION=remote yarn test:chrome",
+    "test:remote:firefox": "LOCATION=remote yarn test:firefox",
+    "test:remote:edge": "LOCATION=remote yarn test:edge",
+    "test:remote:safari": "LOCATION=remote yarn test:safari",
+
+    "test:customBinaries:chrome": "BINARIES=custom yarn test:chrome",
+    "test:customBinaries:firefox": "BINARIES=custom yarn test:firefox",
+    "test:customBinaries:edge": "BINARIES=custom yarn test:edge",
+
+    "test:customBinaries:remote:chrome": "BINARIES=custom LOCATION=remote yarn test:chrome",
+    "test:customBinaries:remote:firefox": "BINARIES=custom LOCATION=remote yarn test:firefox",
+    "test:customBinaries:remote:edge": "BINARIES=custom LOCATION=remote yarn test:edge",
+
+    "test:headless:chrome": "UI=headless yarn test:chrome",
+    "test:headless:firefox": "UI=headless yarn test:firefox",
+    "test:headless:edge": "UI=headless yarn test:edge",
+
+    "test:headless:remote:chrome": "UI=headless LOCATION=remote yarn test:chrome",
+    "test:headless:remote:firefox": "UI=headless LOCATION=remote yarn test:firefox",
+    "test:headless:remote:edge": "UI=headless LOCATION=remote yarn test:edge",
+
+    "test:headless:customBinaries:chrome": "BINARIES=custom UI=headless yarn test:chrome",
+    "test:headless:customBinaries:firefox": "BINARIES=custom UI=headless yarn test:firefox",
+    "test:headless:customBinaries:edge": "BINARIES=custom UI=headless yarn test:edge",
+
+    "test:headless:customBinaries:remote:chrome": "BINARIES=custom LOCATION=remote UI=headless yarn test:chrome",
+    "test:headless:customBinaries:remote:firefox": "BINARIES=custom LOCATION=remote UI=headless yarn test:firefox",
+    "test:headless:customBinaries:remote:edge": "BINARIES=custom LOCATION=remote UI=headless yarn test:edge"
+  }
+}

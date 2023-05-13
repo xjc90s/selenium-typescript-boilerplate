@@ -1,0 +1,26 @@
+import { WebDriver } from "selenium-webdriver";
+import { GetDriver } from "@utilities/builder";
+
+/**
+ * Testing
+ */
+ 
+jest.setTimeout(+(process.env.TIMEOUT) || 1000 * 90);
+
+const browserDriver: string = process.env.WEBDRIVER;
+
+describe((`${browserDriver} tests`).toUpperCase(), ()=>{
+    const rootURL: string = //Required -> addresses; // Starting URL
+    const ttl: number = +(process.env.TIMETOLIVE) || 1000 * 20; // in ms
+
+    let driver: WebDriver;
+
+    beforeAll(async ()=>{
+        driver = GetDriver(browserDriver);
+        await driver.get(rootURL);
+    }, ttl);
+
+    afterAll(async ()=> {
+        await driver.quit();
+    });
+});
